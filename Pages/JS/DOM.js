@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 mostrarError(emailL, 'Email no válido.');
                 valido = false;
             }
-            if (!passL.value || passL.value.length < 6) {
-                mostrarError(passL, 'Mínimo 6 caracteres.');
+            if (!passL.value || passL.value.length < 8) {
+                mostrarError(passL, 'Mínimo 8 caracteres.');
                 valido = false;
             }
 
