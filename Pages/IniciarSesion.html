@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <title>Iniciar Sesion</title>
+</head>
+
+<body>
+    <nav class="bg-white border-gray-150 dark:bg-gray-900">
+        <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+            <a class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="Imagen/buildings.svg" class="h-8" alt="NovaSetup Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NovaSetup</span>
+            </a>
+            <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <a href="http://127.0.0.1:5500/Pages/CrearCuenta.html"
+                    class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Crear
+                    cuenta nueva</a>
+                <a href="http://127.0.0.1:5500/Pages/IniciarSesion.html"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Iniciar
+                    Sesion</a>
+            </div>
+            <div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+                    <li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/Index.html"
+                            class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                            aria-current="page">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/Pages/Nosotros.html"
+                            class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/Pages/Productos.html"
+                            class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Productos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="flex justify-center items-center h-screen bg-gray-100 p-1">
+        <div
+            class="flex w-[100px] justify-between items-center bg-white dark:bg-gray-800 p-5 rounded-lg shadow-lg space-x-12">
+            <div class="w-1/2 text-center">
+                <img src="Imagen/Teclado.jpeg" alt="Descripción de la imagen"
+                    class="rounded-lg shadow-lg mx-auto mb-4 max-w-full">
+            </div>
+            <form class="w-1/2 p-8">
+                <div class="mb-6">
+                    <p class="text-gray-900 dark:text-white font-semibold text-center text-5xl">NovaSetup</p>
+                    <br>
+                    <br>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center">
+                        Tu correo electrónico:
+                    </label>
+                    <input type="email" id="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-center"
+                        placeholder="ant@gmail.com" required />
+                </div>
+                <div class="mb-6">
+                    <label for="password"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center">
+                        Tu contraseña:
+                    </label>
+                    <input type="password" id="password"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-center"
+                        placeholder="•••••••••" required />
+                </div>
+                <div class="flex items-start mb-6">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value=""
+                            class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                            required />
+                    </div>
+                    <label for="remember"
+                        class="ms-2 text-sm font-medium text-gray-900 dark:text-white">Recuérdame</label>
+                </div>
+                <a href="http://127.0.0.1:5500/Index.html"
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 block text-center">
+                    Registrarse
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a
+                    href="http://127.0.0.1:5500/Index.html" class="hover:underline">NovaSetup</a>. Todos los derechos
+                reservados.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Acerca de</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Política de privacidad</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licencias</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

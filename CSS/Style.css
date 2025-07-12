@@ -1,0 +1,72 @@
+.navBar {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+#Logo {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.navBar .nav {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+
+.navBar .nav:first-of-type {
+    margin-left: auto;
+}
+
+#TituloPrincipal {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+.nav {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav:hover {
+    color: crimson;
+}
+
+.series-card {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.series-img {
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.series-content p {
+    margin: 0;
+}
+
+.series-content button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
