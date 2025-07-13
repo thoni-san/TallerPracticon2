@@ -13,3 +13,13 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
         }
     });
 });
+
+
+document.getElementById('search-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const term = this.querySelector('input[name="query"]').value.trim().toLowerCase();
+    document.querySelectorAll('.producto').forEach(card => {
+        const nombre = card.dataset.nombre.toLowerCase();
+        card.style.display = nombre.includes(term) || term === '' ? '' : 'none';
+    });
+});
