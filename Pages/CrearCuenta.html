@@ -147,9 +147,10 @@
             </div>
 
             <!-- Agrega este elemento al final del formulario -->
-            <div id="progress-bar" class="fixed bottom-0 left-0 w-0 h-2 bg-blue-500 transition-all duration-2000"></div>
+            <div id="progress-bar"
+                class="fixed bottom-0 left-0 w-0 h-2 bg-blue-500 transition-all duration-500 opacity-0"></div>
             <div id="success-message"
-                class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-lg hidden">
+                class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-lg opacity-0 transition-opacity duration-500">
                 <span class="mr-2">Usuario registrado exitosamente</span>
                 <svg class="inline-block w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -158,6 +159,7 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </div>
+
 
 
             <div class="flex items-start mb-8">
