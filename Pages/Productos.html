@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/products.js"></script>
     <title>Productos</title>
 </head>
 
@@ -38,15 +40,19 @@
                     </li>
                 </ul>
 
-                <form id="search-form" class="hidden md:flex items-center w-48" submit="return false;">
+                <form id="search-form" class="hidden md:flex items-center w-90" submit="return false;">
                     <input type="text" name="query" placeholder="Buscar..."
-                        class="w-full px-2 py-1 text-sm border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        class="w-full px-2 py-1 text-sm border border-gray-800 rounded-1-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     <button type="submit"
                         class="px-3 py-1 bg-blue-600 text-white text-sm rounded-r-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
                         Buscar
                     </button>
                 </form>
             </div>
+
+            <a href="Cart.html" class="cart-link">
+                🛒 <span id="cart-count">0</span>
+            </a>
 
             <div class="flex items-center space-x-1">
                 <a href="http://127.0.0.1:5500/Pages/CrearCuenta.html"
@@ -65,7 +71,7 @@
         <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Elemento de producto -->
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Cable de Red">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Cable de red.jpeg" alt="Cable de RED" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -77,7 +83,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Camara Web">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Camara Web.jpeg" alt="CAMARA WEB" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -89,7 +95,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Control PS5">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Control PS5.jpeg" alt="CONTROL PS5" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -101,7 +107,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Control XBOX">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Control XBOX.jpeg" alt="CONTROL XBOX" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -113,7 +119,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Fuentes de Poder">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Fuente de Poder.jpeg" alt="FUENTE DE PODER" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -125,7 +131,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Gabinete Case">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Gabinete Case.jpeg" alt="CASE" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -137,7 +143,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Laptop">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Laptop.jpeg" alt="LAPTOP" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -149,7 +155,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Monitor">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Monitor.jpeg" alt="Monitor" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -161,7 +167,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="MousePAD">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/MousePAD.jpeg" alt="MOUSEPAD" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -173,7 +179,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Parlantes">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Parlantes.jpeg" alt="PARLANTES" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -185,7 +191,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Placa Madre">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Placa Madre.jpeg" alt="PLACA MADRE" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -197,7 +203,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Procesador">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Procesador.jpeg" alt="PROCESADOR" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -209,7 +215,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Tarjeta Grafica">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Tarjeta Grafica.jpeg" alt="TARJETA GRAFICA" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -221,7 +227,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Tarjeta Ram">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Tarjeta Ram.jpeg" alt="TARJETA RAM" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -233,7 +239,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Ventilador Liquido">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Ventilador Liquido.jpeg" alt="VENTILADOR LIQUIDO"
                         class="w-full h-48 object-cover" />
                 </div>
@@ -246,7 +252,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Ventiladores">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Ventiladores.jpeg" alt="VENTILADORES" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -258,7 +264,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Audifonos">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Audifonos.jpeg" alt="AUDIFONOS" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -270,7 +276,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Soporte Monitor">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Soporte Monitor.jpeg" alt="SOPORTE MONITOR" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -282,7 +288,7 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Microfono">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Microfono.jpeg" alt="MICROFONO" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
@@ -294,14 +300,14 @@
             </li>
 
             <li class="bg-white border border-gray-200 rounded-lg shadow-sm producto" data-nombre="Disco Solido">
-                <div class="overflow-hidden rounded-t-lg">
+                <div class="overflow-hidden rounded-t-lg product-card">
                     <img src="Imagen/Disco Solido.jpeg" alt="DISCO SOLIDO" class="w-full h-48 object-cover" />
                 </div>
                 <div class="p-5">
                     <h2 class="text-xl font-semibold text-gray-900 mb-2">DISCO SOLIDO</h2>
                     <p class="text-gray-700 mb-4">Un disco sólido, también conocido como SSD (Solid State Drive), es un
                         tipo de dispositivo de almacenamiento de datos que utiliza memoria no volátil.</p>
-                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Comprar</button>
+                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" data-id="disco-solido" data-name="Disco Solido" data-price="79.99">Comprar</button>
                 </div>
             </li>
 
