@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailDomainSelect = document.getElementById('email-domain');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirm_password');
+    const progressBar = document.getElementById('progress-bar');
+    const successMessage = document.getElementById('success-message');
 
     // Regex para validar email
     const reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -66,14 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Enviar formulario si es válido
             if (valido) {
+                // Mostrar barra de progreso
+                progressBar.classList.remove('w-0');
+                progressBar.classList.add('w-full');
+
                 // Simulación de tiempo de proceso
                 formCrear.classList.add('opacity-50', 'pointer-events-none');
-                const loadingMessage = document.createElement('div');
-                loadingMessage.textContent = 'Procesando, por favor espere...';
-                loadingMessage.classList.add('fixed', 'top-1/2', 'left-1/2', 'transform', '-translate-x-1/2', '-translate-y-1/2', 'bg-gray-900', 'text-white', 'px-4', 'py-2', 'rounded-lg');
-                document.body.appendChild(loadingMessage);
 
                 setTimeout(() => {
+                    // Ocultar barra de progreso
+                    progressBar.classList.remove('w-full');
+                    progressBar.classList.add('w-0');
+
+                    // Mostrar mensaje de éxito
+                    successMessage.classList.remove('hidden');
+
+                    // Enviar formulario
                     formCrear.submit();
                 }, 2000); // Tiempo de proceso simulado (2 segundos)
             }
