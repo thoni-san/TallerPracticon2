@@ -80,10 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Mostrar el mensaje de registro exitoso
                     successMessage.classList.remove('hidden');
+                    successMessage.classList.remove('text-white', 'bg-gray-900');
+                    successMessage.classList.add('text-green-500', 'bg-green-100');
 
                     // Enviar formulario
                     formCrear.submit();
                 }, 2000); // Tiempo de proceso simulado (2 segundos)
+
+                setTimeout(() => {
+                    // Ocultar el mensaje de registro exitoso
+                    successMessage.classList.add('hidden');
+                }, 5000); // Tiempo de visualización del mensaje (5 segundos)
             }
         });
     }
