@@ -307,7 +307,8 @@
                     <h2 class="text-xl font-semibold text-gray-900 mb-2">DISCO SOLIDO</h2>
                     <p class="text-gray-700 mb-4">Un disco sólido, también conocido como SSD (Solid State Drive), es un
                         tipo de dispositivo de almacenamiento de datos que utiliza memoria no volátil.</p>
-                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" data-id="disco-solido" data-name="Disco Solido" data-price="79.99">Comprar</button>
+                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                        data-id="disco-solido" data-name="Disco Solido" data-price="79.99">Comprar</button>
                 </div>
             </li>
 
@@ -349,6 +350,26 @@
             </ul>
         </div>
     </footer>
+
+    <!-- Modal de carrito -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg shadow-lg max-w-sm w-full p-6 relative">
+            <button id="close-modal" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">✕</button>
+            <h2 class="text-xl font-semibold mb-4">Producto añadido</h2>
+            <div id="modal-content">
+                <!-- Aquí inyectaremos el producto añadido -->
+            </div>
+            <div class="mt-6 flex justify-end space-x-2">
+                <button id="continue-shopping" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                    Seguir comprando
+                </button>
+                <a href="Cart.html" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    Ver carrito
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

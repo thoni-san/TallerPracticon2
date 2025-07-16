@@ -70,3 +70,22 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* Asegúrate de que flex centrándolo funcione */
+#cart-modal {
+    display: none;
+    /* lo activaremos por JS */
+}
+
+/* Cuando lo mostremos, será un flex contenedor: */
+#cart-modal.show {
+    display: flex;
+}
+
+/* Botón de cerrar */
+#close-modal {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
