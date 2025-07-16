@@ -77,12 +77,12 @@ const emailUsernameInput = document.getElementById('email-username');
 const emailDomainSelect = document.getElementById('email-domain');
 
 if (emailUsernameInput.value.trim() && emailDomainSelect.value) {
-    const email = `${emailUsernameInput.value.trim()}@${emailDomainSelect.value}`;
-    if (!reEmail.test(email)) {
-        mostrarError(emailUsernameInput, 'Correo electrónico no válido.');
-        valido = false;
-    }
-} else {
-    mostrarError(emailUsernameInput, 'Falta completar el correo electrónico.');
+  const email = `${emailUsernameInput.value.trim()}@${emailDomainSelect.value}`;
+  if (!reEmail.test(email)) {
+    mostrarError(emailUsernameInput, 'Correo electrónico no válido.');
     valido = false;
+  }
+} else {
+  mostrarError(emailUsernameInput, 'Falta completar el correo electrónico.');
+  valido = false;
 }
