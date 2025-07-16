@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Enviar formulario
                     formCrear.submit();
-                }, 2000); // Tiempo de proceso simulado (2 segundos)
+                }, 5000); // Tiempo de proceso simulado (2 segundos)
             }
         });
     }
