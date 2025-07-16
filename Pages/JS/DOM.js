@@ -85,12 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Enviar formulario
                     formCrear.submit();
-                }, 2000); // Tiempo de proceso simulado (2 segundos)
+                }, 3000); // Tiempo de proceso simulado (2 segundos)
 
                 setTimeout(() => {
                     // Ocultar el mensaje de registro exitoso
                     successMessage.classList.add('hidden');
-                }, 5000); // Tiempo de visualización del mensaje (5 segundos)
+                }, 8000); // Tiempo de visualización del mensaje (5 segundos)
             }
         });
     }
