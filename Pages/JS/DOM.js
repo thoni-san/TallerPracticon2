@@ -1,11 +1,10 @@
-// JS/DOM.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Elementos Crear Cuenta
     const formCrear = document.getElementById('formCrear');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    const confirmPass = document.getElementById('confirm_password');
+    const emailUsernameInput = document.getElementById('email-username');
+    const emailDomainSelect = document.getElementById('email-domain');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm_password');
 
     // Regex para validar email
     const reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,40 +29,39 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             limpiarErrores();
             let valido = true;
-            let camposIncompletos = []; // Array para almacenar campos incompletos
 
             // Validación de campos
-            const campos = ['first_name', 'last_name', 'company', 'phone', 'birthdate', 'email', 'password', 'confirm_password'];
+            const campos = ['first_name', 'last_name', 'company', 'phone', 'birthdate'];
             campos.forEach(id => {
                 const input = document.getElementById(id);
                 if (!input.value.trim()) {
                     mostrarError(input, 'Falta completar');
-                    camposIncompletos.push(input.name); // Agregar el nombre del campo incompleto
                     valido = false;
                 }
             });
 
             // Validar correo electrónico
-            if (!reEmail.test(email.value)) {
-                mostrarError(email, 'Correo electrónico no válido.');
+            if (emailUsernameInput.value.trim() && emailDomainSelect.value) {
+                const email = `${emailUsernameInput.value.trim()}@${emailDomainSelect.value}`;
+                if (!reEmail.test(email)) {
+                    mostrarError(emailUsernameInput, 'Correo electrónico no válido.');
+                    valido = false;
+                }
+            } else {
+                mostrarError(emailUsernameInput, 'Falta completar el correo electrónico.');
                 valido = false;
             }
 
             // Contraseña ≥ 8 caracteres
-            if (password.value.length < 8) {
-                mostrarError(password, 'Mínimo 8 caracteres.');
+            if (passwordInput.value.length < 8) {
+                mostrarError(passwordInput, 'La contraseña debe tener al menos 8 caracteres.');
                 valido = false;
             }
 
             // Confirmar contraseña coincide
-            if (password.value !== confirmPass.value) {
-                mostrarError(confirmPass, 'No coinciden.');
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                mostrarError(confirmPasswordInput, 'Las contraseñas no coinciden.');
                 valido = false;
-            }
-
-            // Mostrar mensaje general si hay campos incompletos
-            if (!valido) {
-                alert('Por favor, completa todos los campos requeridos.');
             }
 
             // Enviar formulario si es válido
@@ -71,18 +69,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Validación del correo electrónico
-const emailUsernameInput = document.getElementById('email-username');
-const emailDomainSelect = document.getElementById('email-domain');
-
-if (emailUsernameInput.value.trim() && emailDomainSelect.value) {
-  const email = `${emailUsernameInput.value.trim()}@${emailDomainSelect.value}`;
-  if (!reEmail.test(email)) {
-    mostrarError(emailUsernameInput, 'Correo electrónico no válido.');
-    valido = false;
-  }
-} else {
-  mostrarError(emailUsernameInput, 'Falta completar el correo electrónico.');
-  valido = false;
-}
