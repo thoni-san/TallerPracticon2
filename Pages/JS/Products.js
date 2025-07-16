@@ -1,26 +1,27 @@
-// assets/js/products.js
-
 // Clave para almacenar el carrito en localStorage
 const CART_KEY = 'miCarrito';
 
-// Recupera el carrito (o array vacío si no existe)
+// Recupera el carrito (o array vacío si no existe) 
 function loadCart() {
     return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
 // Guarda el carrito actualizado
 function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-// Renderiza el contador en el icono
+// Renderiza el contador en el ícono del carrito
 function updateCartCount() {
     const cart = loadCart();
     const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-    document.getElementById('cart-count').textContent = totalItems;
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) {
+        cartCountEl.textContent = totalItems;
+    }
 }
 
-// Añade un producto al carrito (o aumenta qty si ya existía)
+// Añade un producto al carrito (o aumenta cantidad si ya existe)
 function addToCart(product) {
     const cart = loadCart();
     const existing = cart.find(item => item.id === product.id);
@@ -32,29 +33,35 @@ function addToCart(product) {
     saveCart(cart);
 }
 
-// Muestra el modal tras añadir producto
+// Muestra el modal tras añadir un producto
 function showCartModal(product) {
     const modal = document.getElementById('cart-modal');
     const content = document.getElementById('modal-content');
-
     const cart = loadCart();
     const currentItem = cart.find(item => item.id === product.id);
 
-    content.innerHTML = `
-    <p><strong>${product.name}</strong> se ha añadido al carrito.</p>
-    <p>Cantidad en carrito: ${currentItem.qty}</p>
-  `;
-
-    modal.classList.add('show');
+    if (modal && content && currentItem) {
+        content.innerHTML = `
+            <p><strong>${product.name}</strong> se ha añadido al carrito.</p>
+            <p>Cantidad en carrito: ${currentItem.qty}</p>
+        `;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
 }
 
-// Handler para el botón “Añadir al carrito”
+// Manejador para botón "Comprar"
 function addToCartHandler(event) {
     const btn = event.currentTarget;
+    const { id, name, price } = btn.dataset;
+
+    // Validación básica de atributos
+    if (!id || !name || !price) return;
+
     const product = {
-        id: btn.dataset.id,
-        name: btn.dataset.name,
-        price: parseFloat(btn.dataset.price)
+        id: id,
+        name: name,
+        price: parseFloat(price)
     };
 
     addToCart(product);
@@ -62,23 +69,31 @@ function addToCartHandler(event) {
     showCartModal(product);
 }
 
-// Inicializa eventos al cargar la página
+// Inicialización al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
-    // Actualiza contador
     updateCartCount();
 
-    // Asocia handler a todos los botones
+    // Botones de compra
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', addToCartHandler);
     });
 
-    // Cerrar modal
-    document.getElementById('close-modal').addEventListener('click', () => {
-        document.getElementById('cart-modal').classList.remove('show');
-    });
+    // Modal y botones
+    const modal = document.getElementById('cart-modal');
+    const closeModal = document.getElementById('close-modal');
+    const continueBtn = document.getElementById('continue-shopping');
 
-    // Seguir comprando
-    document.getElementById('continue-shopping').addEventListener('click', () => {
-        document.getElementById('cart-modal').classList.remove('show');
-    });
+    if (closeModal && modal) {
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+    }
+
+    if (continueBtn && modal) {
+        continueBtn.addEventListener('click', () => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+    }
 });
