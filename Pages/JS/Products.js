@@ -8,7 +8,8 @@ function loadCart() {
     return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
-// Guarda el carrito actualizado\ nfunction saveCart(cart) {
+// Guarda el carrito actualizado\ nfunction saveCart(cart) 
+{
 localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
