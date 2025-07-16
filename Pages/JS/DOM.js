@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailDomainSelect = document.getElementById('email-domain');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirm_password');
+    const successMessage = document.getElementById('success-message');
 
     // Regex para validar email
     const reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -74,6 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.appendChild(loadingMessage);
 
                 setTimeout(() => {
+                    // Ocultar el mensaje de carga
+                    loadingMessage.remove();
+
+                    // Mostrar el mensaje de registro exitoso
+                    successMessage.classList.remove('hidden');
+
+                    // Enviar formulario
                     formCrear.submit();
                 }, 2000); // Tiempo de proceso simulado (2 segundos)
             }
