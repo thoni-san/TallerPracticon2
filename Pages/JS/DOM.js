@@ -81,11 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     progressBar.classList.add('w-0');
 
                     // Mostrar mensaje de éxito
-                    successMessage.classList.remove('hidden');
+                    successMessage.classList.remove('opacity-0');
+                    successMessage.classList.add('opacity-100');
 
                     // Enviar formulario
                     formCrear.submit();
-                }, 5000); // Tiempo de proceso simulado (2 segundos)
+                }, 5000); // Tiempo de proceso simulado (5 segundos)
             }
         });
     }
