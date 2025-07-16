@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const span = document.getElementById(`error${capitalize(input.id)}`);
         span.textContent = mensaje;
     }
-    
+
     function limpiarErrores(formSelector = 'span[id^="error"]') {
         document.querySelectorAll(formSelector).forEach(s => s.textContent = '');
     }
-    
+
     function capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
@@ -71,3 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Validación del correo electrónico
+const emailUsernameInput = document.getElementById('email-username');
+const emailDomainSelect = document.getElementById('email-domain');
+
+if (emailUsernameInput.value.trim() && emailDomainSelect.value) {
+    const email = `${emailUsernameInput.value.trim()}@${emailDomainSelect.value}`;
+    if (!reEmail.test(email)) {
+        mostrarError(emailUsernameInput, 'Correo electrónico no válido.');
+        valido = false;
+    }
+} else {
+    mostrarError(emailUsernameInput, 'Falta completar el correo electrónico.');
+    valido = false;
+}
