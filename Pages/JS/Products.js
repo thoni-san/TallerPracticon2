@@ -8,9 +8,9 @@ function loadCart() {
     return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
-// Guarda el carrito actualizado\ nfunction saveCart(cart) 
-{
-localStorage.setItem(CART_KEY, JSON.stringify(cart));
+// Guarda el carrito actualizado
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
 // Renderiza el contador en el icono
