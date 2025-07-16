@@ -65,7 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Enviar formulario si es válido
-            if (valido) formCrear.submit();
+            if (valido) {
+                // Simulación de tiempo de proceso
+                formCrear.classList.add('opacity-50', 'pointer-events-none');
+                const loadingMessage = document.createElement('div');
+                loadingMessage.textContent = 'Procesando, por favor espere...';
+                loadingMessage.classList.add('fixed', 'top-1/2', 'left-1/2', 'transform', '-translate-x-1/2', '-translate-y-1/2', 'bg-gray-900', 'text-white', 'px-4', 'py-2', 'rounded-lg');
+                document.body.appendChild(loadingMessage);
+
+                setTimeout(() => {
+                    formCrear.submit();
+                }, 2000); // Tiempo de proceso simulado (2 segundos)
+            }
         });
     }
 });
