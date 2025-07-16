@@ -42,15 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Validar correo electrónico
-            if (emailUsernameInput.value.trim() && emailDomainSelect.value) {
-                const email = `${emailUsernameInput.value.trim()}@${emailDomainSelect.value}`;
-                if (!reEmail.test(email)) {
-                    mostrarError(emailUsernameInput, 'Correo electrónico no válido.');
-                    valido = false;
-                }
-            } else {
-                mostrarError(emailUsernameInput, 'Falta completar el correo electrónico.');
-                valido = false;
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && !emailRegex.test(email)) {
+                document.getElementById('errorEmail').textContent = 'Correo electrónico no válido';
+                todoOk = false;
             }
 
             // Contraseña ≥ 8 caracteres
@@ -87,10 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     formCrear.submit();
                 }, 2000); // Tiempo de proceso simulado (2 segundos)
 
-                setTimeout(() => {
-                    // Ocultar el mensaje de registro exitoso
-                    successMessage.classList.add('hidden');
-                }, 5000); // Tiempo de visualización del mensaje (5 segundos)
             }
         });
     }
