@@ -110,20 +110,9 @@
                 <label for="email"
                     class="block mb-2 text-lg font-semibold text-gray-900 dark:text-white text-center">Correo
                     Electrónico:</label>
-                <div class="flex items-center">
-                    <input type="text" id="email-username" name="email-username"
-                        class="bg-gray-100 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-center"
-                        placeholder="Nombre de usuario" required />
-                    <span class="mx-2">@</span>
-                    <select id="email-domain" name="email-domain"
-                        class="bg-gray-100 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-center"
-                        required>
-                        <option value="">Seleccionar dominio</option>
-                        <option value="ejemplo.com">gmail.com</option>
-                        <option value="otroejemplo.com">outlook.es</option>
-                        <option value="miempresa.com">hotmail.com</option>
-                    </select>
-                </div>
+                <input type="email" id="email" name="email"
+                    class="bg-gray-100 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-center"
+                    placeholder="correo@ejemplo.com" required />
                 <span id="errorEmail" class="text-red-600 text-sm"></span>
             </div>
 
