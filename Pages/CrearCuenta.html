@@ -175,43 +175,8 @@
     <script>
         document.getElementById('formCrear').addEventListener('submit', function (e) {
             e.preventDefault();
-            const campos = ['first_name', 'last_name', 'company', 'phone', 'birthdate', 'email', 'password', 'confirm_password'];
-            let todoOk = true;
-
-            // Limpia errores
-            campos.forEach(id => {
-                document.getElementById('error' + capitalize(id)).textContent = '';
-            });
-
-            // Verifica vacíos
-            campos.forEach(id => {
-                const val = document.getElementById(id).value.trim();
-                if (!val) {
-                    document.getElementById('error' + capitalize(id)).textContent = 'Falta completar';
-                    todoOk = false;
-                }
-            });
-
-            // Contraseña ≥ 8 caracteres
-            const pwd = document.getElementById('password').value;
-            if (pwd && pwd.length < 8) {
-                document.getElementById('errorPassword').textContent = 'Mínimo 8 caracteres';
-                todoOk = false;
-            }
-
-            // Confirmar contraseña coincide
-            const cpwd = document.getElementById('confirm_password').value;
-            if (pwd && cpwd && pwd !== cpwd) {
-                document.getElementById('errorConfirm_password').textContent = 'No coinciden';
-                todoOk = false;
-            }
-
-            if (todoOk) this.submit();
+            validarFormulario();
         });
-
-        function capitalize(str) {
-            return str.charAt(0).toUpperCase() + str.slice(1);
-        }
     </script>
 </body>
 

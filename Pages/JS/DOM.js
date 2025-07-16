@@ -76,3 +76,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+function validarFormulario() {
+    const campos = ['first_name', 'last_name', 'company', 'phone', 'birthdate', 'email', 'password', 'confirm_password'];
+    let todoOk = true;
+
+    // Limpia errores
+    campos.forEach(id => {
+        document.getElementById('error' + capitalize(id)).textContent = '';
+    });
+
+    // Verifica vacíos
+    campos.forEach(id => {
+        const val = document.getElementById(id).value.trim();
+        if (!val) {
+            document.getElementById('error' + capitalize(id)).textContent = 'Falta completar';
+            todoOk = false;
+        }
+    });
+
+    // Validar correo electrónico
+    const email = document.getElementById('email').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailRegex.test(email)) {
+        document.getElementById('errorEmail').textContent = 'Correo electrónico no válido';
+        todoOk = false;
+    }
+
+    // Contraseña ≥ 8 caracteres
+    const pwd = document.getElementById('password').value;
+    if (pwd && pwd.length < 8) {
+        document.getElementById('errorPassword').textContent = 'Mínimo 8 caracteres';
+        todoOk = false;
+    }
+
+    // Confirmar contraseña coincide
+    const cpwd = document.getElementById('confirm_password').value;
+    if (pwd && cpwd && pwd !== cpwd) {
+        document.getElementById('errorConfirm_password').textContent = 'No coinciden';
+        todoOk = false;
+    }
+
+    if (todoOk) {
+        // Aquí puedes enviar el formulario o hacer otra acción
+        document.getElementById('formCrear').submit();
+    }
+}
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
